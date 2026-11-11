@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+test-results
+playwright-report
+captures
+
+# Photos brutes et candidats non retenus : restent en local (dépôt public, autorisations à confirmer)
+sources/_candidats_non_retenus
+sources/photos

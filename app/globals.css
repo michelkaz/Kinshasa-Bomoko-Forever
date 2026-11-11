@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+/* ===== Tokens de la charte KBF (valeurs mesurées sur le logo officiel) =====
+   Tout le site passe par ces variables : changer la charte ne demande pas de réécrire les pages. */
+@theme {
+  --color-blue: #001e6b;
+  --color-blue-2: #0a2f8f;
+  --color-night: #000f3a;
+  --color-red: #c50100;
+  --color-red-dk: #9e0000;
+  --color-coral: #ff6a5c;
+  --color-mist: #eef1f8;
+  --color-line: #d5dae8;
+  --color-ink: #0b1226;
+  --color-slate: #4a5370;
+  --color-pale: #c9d4f5;
+  --font-display: var(--font-archivo), "Arial Narrow", sans-serif;
+  --font-body: var(--font-public), system-ui, sans-serif;
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-xl: 48px;
+}
+
+:root {
+  color-scheme: light;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --gutter: clamp(16px, 4vw, 56px);
+  --hh: 76px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+*:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+::selection {
+  background: var(--color-coral);
+  color: var(--color-blue);
+}
+img {
+  max-width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.disp {
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+.lab {
+  font: 600 12px/1.2 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ttl {
+  font-size: clamp(38px, 5.6vw, 80px);
+  color: var(--color-blue);
+}
+.sec {
+  padding-block: clamp(56px, 9vw, 112px);
+}
+
+/* Boutons : pilules arrondies */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font: 700 15px var(--font-body);
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    box-shadow 0.25s;
+  will-change: transform;
+}
+.btn-red {
+  background: var(--color-red);
+  color: #fff;
+}
+.btn-red:hover {
+  background: var(--color-red-dk);
+  box-shadow: 0 10px 26px rgba(197, 1, 0, 0.35);
+}
+.btn-coral {
+  background: var(--color-coral);
+  color: var(--color-blue);
+}
+.btn-coral:hover {
+  background: #fff;
+}
+.btn-blue {
+  background: var(--color-blue);
+  color: #fff;
+}
+.btn-blue:hover {
+  background: var(--color-blue-2);
+}
+.btn-ghost {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: #fff;
+  color: var(--color-blue);
+}
+.btn-wa {
+  background: #25d366;
+  color: var(--color-ink);
+}
+
+.pill {
+  display: inline-block;
+  font: 600 12px var(--font-body);
+  background: var(--color-mist);
+  color: var(--color-blue);
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tbd {
+  border: 2px dashed var(--color-red);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  color: #7a0000;
+  background: #fff6f5;
+}
+.tbd b {
+  display: block;
+  font: 600 12px var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* Photos : toujours arrondies */
+.ph-round {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-mist);
+}
+.ph-round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* En-tête de page (photo en première section) */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background: var(--color-blue);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  display: flex;
+  align-items: flex-end;
+}
+.page-hero .veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 30, 107, 0.62) 0%, rgba(0, 30, 107, 0.3) 38%, rgba(0, 15, 58, 0.96) 100%);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 106, 92, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 22px rgba(255, 106, 92, 0);
+  }
+}
+.arcs {
+  animation: spin 120s linear infinite;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Défilement horizontal des étapes */
+.track {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 22px;
+  scrollbar-width: thin;
+}
+.track > * {
+  scroll-snap-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 200;
+  background: var(--color-coral);
+  color: var(--color-blue);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.skip:focus {
+  top: 12px;
+}
+.navlink {
+  transition: background 0.3s;
+}
+.navlink:hover {
+  background: rgba(255, 106, 92, 0.22);
+}
+
+/* Formes organiques : les contours « respirent » et se déforment au survol */
+.blob {
+  border-radius: 38px;
+  transition: border-radius 0.9s var(--ease);
+}
+.blob-host:hover .blob,
+.blob:hover {
+  border-radius: 62% 38% 56% 44% / 46% 58% 42% 54%;
+}
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 56% 44% 52% 48% / 46% 56% 44% 54%;
+  }
+  50% {
+    border-radius: 42% 58% 38% 62% / 58% 42% 58% 42%;
+  }
+}
+.morph {
+  animation: morph 14s ease-in-out infinite;
+}
+.link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    gap 0.25s;
+}
+.link-more:hover {
+  gap: 16px;
+  background: var(--color-blue);
+  color: #fff;
+  border-color: var(--color-blue);
+}
+
+picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ttl-light {
+  color: #fff !important;
+}
+
+@keyframes wordUp {
+  from { transform: translateY(118%) rotate(8deg); }
+  to { transform: none; }
+}
+.hw { animation: wordUp 0.9s var(--ease) both; }
+.ttl { --accent: var(--color-red); }
+.ttl-light { --accent: var(--color-coral); }
+.hw { animation-duration: 0.6s; }
+
+@media (max-width: 1023px) {
+  :root { --hh: 68px; }
+}
+

@@ -1,0 +1,65 @@
+{
+  "name": "Kinshasa Bomoko Forever",
+  "legalName": "Kinshasa Bomoko Forever ASBL",
+  "slogan": "La voix de l'unité et de l'espoir",
+  "url": "https://kinshasa-bomoko-forever.example",
+  "locale": "fr",
+  "facebook": "https://www.facebook.com/profile.php?id=61573438439148",
+  "nav": [
+    {
+      "label": "Accueil",
+      "href": "/"
+    },
+    {
+      "label": "L'association",
+      "href": "/association/"
+    },
+    {
+      "label": "Nos actions",
+      "href": "/actions/"
+    },
+    {
+      "label": "Événements",
+      "href": "/evenements/"
+    },
+    {
+      "label": "Actualités",
+      "href": "/actualites/"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact/"
+    }
+  ],
+  "contact": {
+    "siege": "Kingasani, face à la commune de Kimbanseke, Kinshasa",
+    "siegeAConfirmer": "Adresse précise",
+    "whatsapp": null,
+    "telephone": null,
+    "email": null,
+    "aConfirmer": [
+      "WhatsApp",
+      "Téléphone",
+      "Courriel",
+      "Adresse précise du siège"
+    ]
+  },
+  "founded": {
+    "officialLaunch": "2025-03-02",
+    "note": "Date de création juridique à confirmer."
+  },
+  "home": {
+    "heroKicker": "ASBL Kinshasa Bomoko Forever · Kinshasa",
+    "heroTitle": "La voix de l'unité et de l'espoir.",
+    "heroSub": "Grandir, partager, s’entraider, s’unir. Ensemble, faisons avancer Kinshasa.",
+    "introKicker": "Qui nous sommes",
+    "introTitle": "Une ASBL de Kinshasa, ouverte à toutes les générations",
+    "introText": "Kinshasa Bomoko Forever a fait sa sortie officielle le 2 mars 2025, au terrain Saint Paul de Kingasani. Depuis, l'association organise des tournois, ouvre des formations gratuites, rend visite aux aînés, marche et se rassemble, et installe des extensions dans de nouvelles communes. Elle est dirigée par son initiateur, Me Ephraïm Mpanda.",
+    "domainsTitle": "Ce que nous faisons"
+  },
+  "domainLabels": {
+    "sport": "Sport et jeunesse",
+    "solidarite": "Solidarité et éducation",
+    "citoyen": "Vie citoyenne"
+  }
+}
